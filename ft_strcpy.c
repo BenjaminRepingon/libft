@@ -13,11 +13,13 @@
 #include "libft.h"
 
 /** Itératif **/
-/*
+
 char	*ft_strcpy(char *dest, const char *src)
 {
-	int	i;
+	int		i;
+	char	sp;
 
+	sp = src;
 	if (dest != 0 || src != 0)
 	{
 		i = 0;
@@ -31,9 +33,10 @@ char	*ft_strcpy(char *dest, const char *src)
 	}
 	return (0);
 }
-*/
-#include <stdio.h>
+
+//#include <stdio.h>
 /** Récursif **/
+/*
 char	*ft_strcpy(char *dest, const char *src)
 {
 	if(*src == '\0') 
@@ -46,8 +49,8 @@ char	*ft_strcpy(char *dest, const char *src)
 		*dest = *src;
 		return (ft_strcpy(dest + 1, src + 1));
 	}
-}
-
+}*/
+/*
 int main(int argc, char const *argv[])
 {
 	char    dest[50] = {0};
@@ -58,4 +61,4 @@ int main(int argc, char const *argv[])
     ft_strcpy(dest, "Hello foo");
     printf("%s\n", dest);
 	return 0;
-}
+}*/
