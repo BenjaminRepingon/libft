@@ -17,9 +17,9 @@
 char	*ft_strcpy(char *dest, const char *src)
 {
 	int		i;
-	char	sp;
+	char	*sp;
 
-	sp = src;
+	sp = (char *)src;
 	if (dest != 0 || src != 0)
 	{
 		i = 0;
@@ -34,7 +34,6 @@ char	*ft_strcpy(char *dest, const char *src)
 	return (0);
 }
 
-//#include <stdio.h>
 /** Récursif **/
 /*
 char	*ft_strcpy(char *dest, const char *src)

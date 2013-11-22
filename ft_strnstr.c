@@ -11,28 +11,24 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strnstr(const char *str, const char *find, size_t n)
 {
-	int	k;
-	int	i;
+	const char*	sp = str;
+	size_t		findL;
+	size_t		cmp;
 
-	if (str == 0 || find == 0)
-		return (0);
-	k = 0;
-	i = 0;
-	while (str[i] != '\0' && n--)
+	findL = strlen(find);
+
+	if (findL == 0)
+		return ((char*)str);
+	while (*sp && sp + findL <= str + n) 
 	{
-		if (str[i] == find[k])
-			k = k + 1;
-		else
-			k = 0;
-		if (find[k] == '\0')
-		{
-			return ((char *)str + i - k + 1);
-		}
-		i++;
+		cmp = ft_strncmp(sp + 1, find + 1, findL - 1);
+
+		if (*sp == *find && cmp == 0)
+			return ((char*)sp);
+		sp++;
 	}
 	return (0);
 }

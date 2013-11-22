@@ -15,6 +15,8 @@
  #include <string.h>
  #include <stdlib.h>
  #include <unistd.h>
+ #define LONG_MAX 0x7FFFFFFFL
+ #define LONG_MIN ((long) 0x80000000L)
 
 /**
  *	Writes a character to the standard output (stdout).
@@ -25,32 +27,44 @@ int		ft_putchar(int);
 void	ft_putstr(char*);
 int		ft_isupper(int);
 int		ft_islower(int);
+int		ft_isspace(char);
+long	ft_strtol(const char*, char**, int);
 
 size_t	ft_strlen(const char*);
+int		ft_strcmp(const char*, const char*);
+int		ft_strncmp (const char*, const char*, size_t);
+char	*ft_strdup(const char*);
+char	*ft_strcat(char*, const char*);
+char	*ft_strncat(char*, const char*, size_t);
+char	*ft_strchr(const char*, int);
+char	*ft_strrchr(const char*, int);
+char	*ft_strstr(const char*, const char*);
+char	*ft_strnstr(const char*, const char*, size_t);
+char	*ft_strcpy(char*, const char*);
+char	*ft_strncpy(char*, char*, size_t);
+size_t	ft_strlcpy(char*, const char*, size_t);
+size_t	ft_strlcat(char*, const char*, size_t);
+/**		**\
+ *	Function 	*
+\**		**/
+
+/**
+ *	Sets the first num bytes of the block of memory pointed by ptr to the specified value (interpreted as an unsigned char).
+ */
 void	*ft_memset(void*, int, size_t);
+void	*ft_memcpy(void*, const void*, size_t);
+void	*ft_memccpy(void*, const void*, int, size_t);
+void	*ft_memmove(void*, const void*, size_t);
+void	*ft_memchr(const void*, int, size_t);
+int		ft_memcmp(const void*, const void*, size_t);
 
 /**
  *	The bzero() function writes n zeroed bytes to the string s. If n is zero, bzero() does nothing.
  */
-
 void	ft_bzero (void*, size_t);
-void	*ft_memcpy(void*, const void*, size_t);
-void	*ft_memccpy(void*, const void*, int, size_t);
-void	*ft_memmove(void*, const void*, size_t);
-void	*ft_memmove(void*, const void*, size_t);
-void	*ft_memchr(const void*, int, size_t);
-char	*ft_strdup(const char*);
-int		ft_strcmp(const char*, const char*);
-int		ft_strncmp (const char*, const char*, size_t);
-char	*ft_strcat(char*, const char*);
-char	*ft_strncat(char*, const char*, size_t);
-char	*ft_strchr(const char*, int);
-char	*ft_strstr(const char*, const char*);
-char	*ft_strnstr(const char*, const char*, size_t);
-char	*ft_strrchr(const char*, int);
-char	*ft_strcpy(char*, const char*);
-char	*ft_strncpy(char*, char*, size_t);
-size_t	ft_strlcpy(char*, const char*, size_t);
+
+
+
 int		ft_atoi(const char*);
 int		ft_isdigit(int);
 int		ft_isalpha(int);

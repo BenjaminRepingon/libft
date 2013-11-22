@@ -10,17 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strrchr(const char *cp, int ch)
-{
-	char	*save;
-	char	c;
+#include "libft.h"
 
-	save = (char *) 0;
-	while ((c = *cp))
+char	*ft_strrchr(const char *s, int c)
+{
+	char	*result;
+
+	result = (char *)NULL;
+	while (1) 
 	{
-		cp++;
-		if (c == ch)
-			save = (char *) cp;
+		if (*s == c)
+			result = (char *)s;
+		if (*s++ == 0)
+			break;
 	}
-	return (save);
+	return (result);
 }

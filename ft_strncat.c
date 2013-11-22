@@ -13,25 +13,27 @@
 #include "libft.h"
 
 /** With implementation **/
+/*
 char	*ft_strncat(char *dest, const char *src, size_t n)
 {
 	ft_strncpy(ft_strchr(dest, '\0'), (char *)src, n);
 	return (dest);
 }
-
+*/
 /** Without implementation **/
-/*
+
 char	*ft_strncat(char *dest, const char *src, size_t n)
 {
-	char *res;
+	char	*ret;
 
-	res = dest;
-	while (*dest && n)
-	{
+	ret = dest;
+	while (*dest)
 		dest++;
-		n--;
+	while (n--)
+	{
+		if (!(*dest++ = *src++))
+			return (ret);	
 	}
-	while (*dest++ = *src++);
-	return (res);
+	*dest = 0;
+	return (ret);
 }
-*/

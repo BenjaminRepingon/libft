@@ -12,55 +12,27 @@
 
 #include "libft.h"
 
-/** With implementation **/
-/* 	Don't work !
 char	*ft_strstr(const char *str, const char *find)
 {
-	char	c;
-	char	sc;
-	size_t	len;
+	char *cp;
+	char *s1;
+	char *s2;
 
-	c = *find++;
-	if (!c)
-		return ((char *) str);
-
-	len = ft_strlen(find);
-
-	while (sc = *str++ != c)
+	cp = (char *)str;
+	if (!*find)
+		return ((char *)str);
+	while (*cp)
 	{
-		if (!sc)
-			return ((char *) 0);
-	}
-
-	while (ft_strncmp(str, find, len))
-	{
-				
-	}
-	return ((char *) str - 1);
-}
-*/
-
-/** Without implementation **/
-char	*ft_strstr(const char *str, const char *find)
-{
-	int	k;
-	int	i;
-
-	if (str == 0 || find == 0)
-		return (0);
-	k = 0;
-	i = 0;
-	while (str[i] != '\0')
-	{
-		if (str[i] == find[k])
-			k = k + 1;
-		else
-			k = 0;
-		if (find[k] == '\0')
+		s1 = cp;
+		s2 = (char *) find;
+		while (*s1 && *s2 && !(*s1 - *s2))
 		{
-			return ((char *)str + i - k + 1);
+			s1++;
+			s2++;
 		}
-		i++;
+		if (!*s2)
+			return (cp);
+		cp++;
 	}
-	return (0);
+	return (NULL);
 }
