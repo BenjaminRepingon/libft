@@ -17,12 +17,12 @@ char	*ft_strrchr(const char *s, int c)
 	char	*result;
 
 	result = (char *)NULL;
-	while (1) 
+	while (1)
 	{
 		if (*s == c)
 			result = (char *)s;
 		if (*s++ == 0)
-			break;
+			break ;
 	}
 	return (result);
 }

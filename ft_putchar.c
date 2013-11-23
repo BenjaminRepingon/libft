@@ -14,7 +14,25 @@
 
 int	ft_putchar(int c)
 {
-	if (c)
-		write(1, &c, 1);
+	if (c >= 0 && c <= 255)
+	{
+		write (1, &c, 1);
+		return (c);
+	}
+	else if (c < 0)
+	{
+		c = c * -1;
+		if (c >= 256)
+		{
+			if (c % 256 == 0)
+				return (0);
+			c = c % 256;
+		}
+		c = c + 256 - 2 * c;
+		if (c >= 0 && c <= 255)
+			write (1, &c, 1);
+	}
+	else if (c >= 256)
+		c = c % 256;
 	return (c);
 }

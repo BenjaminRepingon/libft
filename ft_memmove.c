@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbenjami <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 15:06:48 by rbenjami          #+#    #+#             */
 /*   Updated: 2013/11/19 15:06:50 by rbenjami         ###   ########.fr       */
@@ -14,11 +14,13 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned const char *dp = (unsigned char *)src;
-	unsigned char *sp = (unsigned char *)dest;
+	unsigned const	char	*dp;
+	unsigned char		*sp;
 
+	dp = (unsigned char *)src;
+	sp = (unsigned char *)dest;
 	if (!n)
-		return dest;
+		return (dest);
 
 	if (dest <= src)
 		return (ft_memcpy(dest, src, n));

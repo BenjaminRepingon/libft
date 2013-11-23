@@ -14,15 +14,15 @@
 
 char	*ft_strnstr(const char *str, const char *find, size_t n)
 {
-	const char*	sp = str;
+	const	char	*sp;
 	size_t		findL;
 	size_t		cmp;
 
-	findL = strlen(find);
-
+	sp = str;
+	findL = ft_strlen(find);
 	if (findL == 0)
 		return ((char*)str);
-	while (*sp && sp + findL <= str + n) 
+	while (*sp && sp + findL <= str + n)
 	{
 		cmp = ft_strncmp(sp + 1, find + 1, findL - 1);
 

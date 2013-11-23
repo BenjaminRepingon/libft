@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rbenjami <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 11:50:44 by rbenjami          #+#    #+#             */
 /*   Updated: 2013/11/20 11:50:54 by rbenjami         ###   ########.fr       */
@@ -12,15 +12,16 @@
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	const char ch = c;
+	char	ch;
 
+	ch = (char)c;
 	while (*s != ch)
 	{
 		if (*s == '\0')
-			return 0;
+			return (0);
 		s++;
 	}
-	return (char *)s;
+	return ((char *)s);
 }

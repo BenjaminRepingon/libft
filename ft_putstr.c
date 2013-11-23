@@ -12,11 +12,12 @@
 
 #include "libft.h"
 
-void ft_putstr(char *c)
+void	ft_putstr(char *c)
 {
-	int	i = ft_strlen(c);
+	int	i;
 
-	while(i != 0)
+	i = ft_strlen(c);
+	while (i != 0)
 	{
 		ft_putchar(c[i]);
 		i--;

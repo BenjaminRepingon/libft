@@ -14,9 +14,9 @@
 
 char	*ft_strstr(const char *str, const char *find)
 {
-	char *cp;
-	char *s1;
-	char *s2;
+	char	*cp;
+	char	*s1;
+	char	*s2;
 
 	cp = (char *)str;
 	if (!*find)
