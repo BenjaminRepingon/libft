@@ -17,19 +17,19 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	unsigned const	char	*dp;
 	unsigned char		*sp;
 
-	dp = (unsigned char *)src;
-	sp = (unsigned char *)dest;
-	if (!n)
+	if (n > 0)
+	{
+		dp = (unsigned char *)src;
+		sp = (unsigned char *)dest;
+		if (!n)
+			return (dest);
+		if (dest <= src)
+			return (ft_memcpy(dest, src, n));
+		dp += n;
+		sp += n;
+		while (n--)
+			*--sp = *--dp;
 		return (dest);
-
-	if (dest <= src)
-		return (ft_memcpy(dest, src, n));
-
-	dp += n;
-	sp += n;
-
-	while (n--)
-		*--sp = *--dp;
-
+	}
 	return (dest);
 }

@@ -12,23 +12,27 @@
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *find, size_t n)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-	const	char	*sp;
-	size_t		findL;
-	size_t		cmp;
+	unsigned int	ini;
+	int				i;
+	int				save;
 
-	sp = str;
-	findL = ft_strlen(find);
-	if (findL == 0)
-		return ((char*)str);
-	while (*sp && sp + findL <= str + n)
+	ini = 0;
+	while (s1[ini] != '\0' && ini < n)
 	{
-		cmp = ft_strncmp(sp + 1, find + 1, findL - 1);
-
-		if (*sp == *find && cmp == 0)
-			return ((char*)sp);
-		sp++;
+		i = 0;
+		save = ini;
+		while (s1[ini] == s2[i] && s1[i] != '\0' && s2[i] != '\0' && ini < n)
+		{
+			i++;
+			ini++;
+		}
+		ini = save;
+		if (s2[i] == '\0')
+			return ((char*)&s1[ini]);
+		else
+			ini++;
 	}
-	return (0);
+	return (NULL);
 }

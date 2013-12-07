@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strcpy.c                                           :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,20 +12,22 @@
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
+	size_t	i;
+	char	*res;
 
-	if (dest != 0 || src != 0)
+	if (s && f)
 	{
 		i = 0;
-		while (src[i] != '\0')
+		res = ft_memalloc(sizeof(char) * ft_strlen(s));
+		while (s[i] != '\0')
 		{
-			dest[i] = src[i];
+			res[i] = (*f)(i, s[i]);
 			i++;
 		}
-		dest[i] = '\0';
-		return (dest);
+		res[i] = '\0';
+		return (res);
 	}
 	return (0);
 }

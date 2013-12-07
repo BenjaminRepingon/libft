@@ -16,10 +16,7 @@ void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*sp;
 
-	if (s != NULL)
-	{
-		sp = (unsigned char *)s;
-		while (n--)
-			sp[n] = '\0';
-	}
+	sp = (unsigned char *)s;
+	while (n-- != 0)
+		*sp++ = 0;
 }

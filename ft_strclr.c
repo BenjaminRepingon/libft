@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strcpy.c                                           :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/19 11:01:32 by rbenjami          #+#    #+#             */
-/*   Updated: 2013/11/19 11:25:04 by rbenjami         ###   ########.fr       */
+/*   Created: 2013/11/19 12:21:39 by rbenjami          #+#    #+#             */
+/*   Updated: 2013/11/19 13:55:32 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+void	ft_strclr(char *s)
 {
-	int		i;
+	size_t	len;
 
-	if (dest != 0 || src != 0)
+	if (s)
 	{
-		i = 0;
-		while (src[i] != '\0')
+		len = ft_strlen(s);
+		while (len--)
 		{
-			dest[i] = src[i];
-			i++;
+			*s++ = '\0';
 		}
-		dest[i] = '\0';
-		return (dest);
 	}
-	return (0);
 }

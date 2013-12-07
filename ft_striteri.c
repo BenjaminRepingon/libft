@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strcpy.c                                           :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,20 +12,17 @@
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int		i;
+	size_t	i;
 
-	if (dest != 0 || src != 0)
+	if (s && f)
 	{
 		i = 0;
-		while (src[i] != '\0')
+		while (s[i] != '\0')
 		{
-			dest[i] = src[i];
+			(*f)(i, &s[i]);
 			i++;
 		}
-		dest[i] = '\0';
-		return (dest);
 	}
-	return (0);
 }

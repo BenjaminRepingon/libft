@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,20 +12,52 @@
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t n)
+static char		*ft_saveitoa(int size, unsigned int n, char *nb, int neg)
 {
-	char	*s;
+	int			j;
 
-	s = dest;
-	while (n > 0 && *src != '\0')
+	j = 0;
+	if (neg)
 	{
-		*s++ = *src++;
-		--n;
+		nb[j] = '-';
+		j++;
 	}
-	while (n > 0)
+	while (size > 0)
 	{
-		*s++ = '\0';
-		--n;
+		nb[j] = (n / size) + '0';
+		n = n % size;
+		size = size / 10;
+		j++;
 	}
-	return (dest);
+	nb[j] = '\0';
+	return (nb);
+}
+
+char				*ft_itoa(int n)
+{
+	int				size;
+	unsigned int	i;
+	unsigned int	n2;
+	int				neg;
+	char			*nb;
+
+	size = 1;
+	neg = 0;
+	if (n < 0)
+	{
+		i = n * -1;
+		neg++;
+	}
+	else
+		i = n;
+	n2 = i;
+	n = 0;
+	while (i / 10 > 0)
+	{
+		size *= 10;
+		i = i / 10;
+		n++;
+	}
+	nb = ft_strnew(n + neg);
+	return (ft_saveitoa(size, n2, nb, neg));
 }

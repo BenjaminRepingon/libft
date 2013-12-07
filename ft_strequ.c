@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strcpy.c                                           :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,20 +12,12 @@
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+int		ft_strequ(char const *s1, char const *s2)
 {
-	int		i;
-
-	if (dest != 0 || src != 0)
+	if (s1 != NULL && s2 != NULL)
 	{
-		i = 0;
-		while (src[i] != '\0')
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
-		return (dest);
+		if (!ft_strcmp(s1, s2))
+			return (1);
 	}
 	return (0);
 }

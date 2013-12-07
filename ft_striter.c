@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strcpy.c                                           :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,20 +12,11 @@
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dest, const char *src)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	int		i;
-
-	if (dest != 0 || src != 0)
+	if (s && f)
 	{
-		i = 0;
-		while (src[i] != '\0')
-		{
-			dest[i] = src[i];
-			i++;
-		}
-		dest[i] = '\0';
-		return (dest);
+		while (*s != '\0')
+			(*f)(&(*s++));
 	}
-	return (0);
 }

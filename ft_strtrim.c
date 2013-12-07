@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,22 +10,50 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t n)
+static int	ft_isspace(char c)
 {
-	char	*s;
+	return ((c == ' ' || c == '\t') || (c == '\n' || c == '\v')
+		|| (c == '\f' || c == '\r') ||c == '\12');
+}
 
-	s = dest;
-	while (n > 0 && *src != '\0')
+char	*ft_strtrim(char const *s)
+{
+	char	*str;
+	size_t	i;
+	size_t	j;
+	size_t	k;
+
+	if (!s)
+		return (NULL);
+	j = ft_strlen(s);
+	i = 0;
+	k = 0;
+	while (ft_isspace(s[i]))
+		i++;
+	if (i == j)
 	{
-		*s++ = *src++;
-		--n;
+		str = (char *)malloc(sizeof(char) * 1);
+		if (!str)
+			return (NULL);
+		str[0] = '\0';
+		return (str);
 	}
-	while (n > 0)
+	j--;
+	while (ft_isspace(s[j]))
+		j--;
+	j -= i - 1;
+	str = (char *)malloc(sizeof(char) * j + 1);
+	if (!str)
+		return (NULL);
+	while (j)
 	{
-		*s++ = '\0';
-		--n;
+		str[k] = s[i + k];
+		k++;
+		j--;
 	}
-	return (dest);
+	str[k] = '\0';
+	return (str);
 }

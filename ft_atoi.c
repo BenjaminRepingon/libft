@@ -12,7 +12,34 @@
 
 #include "libft.h"
 
+static int	ft_isspace(char c)
+{
+	return ((c == ' ' || c == '\t') || (c == '\n' || c == '\v')
+		|| (c == '\f' || c == '\r') ||c == '\12');
+}
+
 int	ft_atoi(const char *str)
 {
-	return ((int)ft_strtol(str, (char **)NULL, 10));
+	int		negative;
+	int		value;
+
+	negative = 0;
+	value = 0;
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '+')
+		str++;
+	else if (*str == '-')
+	{
+		negative = 1;
+		str++;
+	}
+	while ((*str <= '9') && (*str >= '0'))
+	{
+		value = (value * 10) - (*str - '0');
+		str++;
+	}
+	if (!negative)
+		value = -value;
+	return (value);
 }

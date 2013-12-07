@@ -21,7 +21,7 @@ char	*ft_strrchr(const char *s, int c)
 	{
 		if (*s == c)
 			result = (char *)s;
-		if (*s++ == 0)
+		if (*s++ == '\0')
 			break ;
 	}
 	return (result);

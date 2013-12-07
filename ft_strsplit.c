@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,20 +12,58 @@
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dest, const char *src, size_t n)
+static size_t	ft_countsplit(char const *s, char c)
 {
-	char	*s;
+	size_t	i;
 
-	s = dest;
-	while (n > 0 && *src != '\0')
+	i = 0;
+	while (*s != '\0')
 	{
-		*s++ = *src++;
-		--n;
+		while (*s == c)
+			s++;
+		if (*s != c && *s != '\0')
+		{
+			while (*s != c && *s != '\0')
+			{
+				s++;
+			}
+			i++;
+		}
 	}
-	while (n > 0)
+	return (i + 1);
+}
+
+static char	**str_end(char **str, size_t i)
+{
+	*(str + i) = '\0';
+	return (str);
+}
+
+char		**ft_strsplit(char const *s, char c)
+{
+	size_t	i;
+	size_t	j;
+	char	**str;
+
+	i = 0;
+	if (!s || !c)
+		return (NULL);
+	str = (char **) ft_memalloc(sizeof(char *) * ft_countsplit(s, c));
+	while (*s != '\0')
 	{
-		*s++ = '\0';
-		--n;
+		while (*s == c)
+			s++;
+		if (*s != c && *s != '\0')
+		{
+			j = 0;
+			while (*s != c && *s != '\0')
+			{
+				j++;
+				s++;
+			}
+			str[i] = ft_strncpy(ft_strnew(j), (s - j), j);
+			i++;
+		}
 	}
-	return (dest);
+	return (str_end(str, i));
 }
