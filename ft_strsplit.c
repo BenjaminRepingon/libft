@@ -6,64 +6,59 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/20 11:50:44 by rbenjami          #+#    #+#             */
-/*   Updated: 2013/11/20 11:50:54 by rbenjami         ###   ########.fr       */
+/*   Updated: 2013/12/10 16:29:05 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-static size_t	ft_countsplit(char const *s, char c)
+static size_t	ft_words(char const *s, char c)
 {
-	size_t	i;
+	int	 i;
+	size_t  size;
 
 	i = 0;
-	while (*s != '\0')
+	size = 0;
+	while (s[i] && s[i] == c)
+		i++;
+	while (s[i])
 	{
-		while (*s == c)
-			s++;
-		if (*s != c && *s != '\0')
-		{
-			while (*s != c && *s != '\0')
-			{
-				s++;
-			}
+		while (s[i] && s[i] == c)
 			i++;
+		if (s[i])
+		{
+			while (s[i] && s[i] != c)
+				i++;
+			size++;
 		}
 	}
-	return (i + 1);
+	return (size);
 }
 
-static char	**str_end(char **str, size_t i)
+char			**ft_strsplit(char const *s, char c)
 {
-	*(str + i) = '\0';
-	return (str);
-}
+	char	**tab;
+	size_t  size;
+	int	 i;
+	int	 start;
 
-char		**ft_strsplit(char const *s, char c)
-{
-	size_t	i;
-	size_t	j;
-	char	**str;
-
-	i = 0;
-	if (!s || !c)
+	if (!s || !(tab = (char **)malloc(sizeof(char *) * (ft_words(s, c) + 1))))
 		return (NULL);
-	str = (char **) ft_memalloc(sizeof(char *) * ft_countsplit(s, c));
-	while (*s != '\0')
+	i = 0;
+	size = 0;
+	while (s[i])
 	{
-		while (*s == c)
-			s++;
-		if (*s != c && *s != '\0')
-		{
-			j = 0;
-			while (*s != c && *s != '\0')
-			{
-				j++;
-				s++;
-			}
-			str[i] = ft_strncpy(ft_strnew(j), (s - j), j);
+		if (s[i] == c)
 			i++;
+		else
+		{
+			start = i;
+			while (s[i] && s[i] != c)
+				i++;
+			tab[size++] = ft_strsub(s, start, i - start);
 		}
 	}
-	return (str_end(str, i));
+	tab[size] = '\0';
+	return (tab);
 }
