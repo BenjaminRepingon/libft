@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/20 11:50:44 by rbenjami          #+#    #+#             */
-/*   Updated: 2013/11/20 11:50:54 by rbenjami         ###   ########.fr       */
+/*   Created: 2014/05/09 15:44:49 by rbenjami          #+#    #+#             */
+/*   Updated: 2014/05/09 15:45:15 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static char		*ft_saveitoa(int size, unsigned int n, char *nb, int neg)
 	return (nb);
 }
 
-char				*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	int				size;
 	unsigned int	i;

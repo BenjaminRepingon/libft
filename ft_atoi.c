@@ -5,20 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/19 12:21:39 by rbenjami          #+#    #+#             */
-/*   Updated: 2013/11/22 15:53:36 by rbenjami         ###   ########.fr       */
+/*   Created: 2014/05/12 18:30:15 by rbenjami          #+#    #+#             */
+/*   Updated: 2014/05/12 18:30:20 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_isspace(char c)
-{
-	return ((c == ' ' || c == '\t') || (c == '\n' || c == '\v')
-		|| (c == '\f' || c == '\r') ||c == '\12');
-}
-
-int	ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	int		negative;
 	int		value;

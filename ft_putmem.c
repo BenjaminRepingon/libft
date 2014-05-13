@@ -1,24 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_putmem.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/19 11:01:32 by rbenjami          #+#    #+#             */
-/*   Updated: 2013/11/19 11:25:04 by rbenjami         ###   ########.fr       */
+/*   Created: 2014/05/01 12:48:53 by rbenjami          #+#    #+#             */
+/*   Updated: 2014/05/06 14:55:24 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+void	ft_putmem(void *adr)
 {
-	char	*tmp;
-
-	tmp = (char *)malloc((len + 1) * sizeof(char));
-	ft_strncpy(tmp, s + start, len);
-	tmp[len] = '\0';
-	return (tmp);
+	write(1, "0x", 2);
+	ft_putnbr_base((size_t)adr, 16);
 }

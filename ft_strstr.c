@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/19 12:21:39 by rbenjami          #+#    #+#             */
-/*   Updated: 2013/11/19 13:55:32 by rbenjami         ###   ########.fr       */
+/*   Created: 2014/04/28 16:41:03 by rbenjami          #+#    #+#             */
+/*   Updated: 2014/05/03 16:11:06 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strstr(const char *str, const char *find)
 	while (*cp)
 	{
 		s1 = cp;
-		s2 = (char *) find;
+		s2 = (char *)find;
 		while (*s1 && *s2 && !(*s1 - *s2))
 		{
 			s1++;
@@ -34,5 +34,5 @@ char	*ft_strstr(const char *str, const char *find)
 			return (cp);
 		cp++;
 	}
-	return (NULL);
+	return (0);
 }

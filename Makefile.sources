@@ -10,38 +10,26 @@
 #                                                                              #
 #******************************************************************************#
 
-include		Makefile.sources
-
-NAME		=	../libft.a
-
-CFLAGS	=	-Wall -Wextra -Werror -g
-
-OBJ_LIB		=	$(SRC_LIB:.c=.o)
-
-HEAD		=	libft.h
-
-all:		$(NAME)
-
-$(NAME):	$(OBJ_LIB)
-	@ar -rc $(NAME) $(OBJ_LIB)
-	@ranlib $(NAME)
-	@echo ""
-	@echo "\033[33m"Compilation of libft.a : "\033[32m"Succes"\033[0m"
-
-$(OBJ_LIB):		$(HEAD)
-
-%.o:		%.c
-	@echo -n .
-	@$(CC) $(CFLAGS) -c $< -o $@ $(INC)
-
-clean:
-	@echo "\033[31m"Objects of libft.a : deleted"\033[0m"
-	@/bin/rm -f $(OBJ_LIB)
-
-fclean:		clean
-	@echo "\033[31m"libft.a : deleted"\033[0m"
-	@/bin/rm -f $(NAME)
-
-re:			fclean all
-
-.PHONY:		all re fclean clean
+SRC_LIB		=	ft_putstr.c			\
+				ft_strlen.c			\
+				ft_strchr.c			\
+				ft_putchar.c		\
+				ft_strstr.c			\
+				ft_strncpy.c		\
+				ft_colorize.c		\
+				ft_putmem.c			\
+				ft_putnbr_base.c	\
+				exit_error.c		\
+				error.c				\
+				ft_printf.c			\
+				ft_itoa.c			\
+				ft_atoi.c			\
+				ft_strnew.c			\
+				ft_memalloc.c		\
+				ft_bzero.c			\
+				ft_isalpha.c		\
+				ft_isascii.c		\
+				ft_isdigit.c		\
+				ft_isprint.c		\
+				ft_isspace.c		\
+				argv_option.c
