@@ -6,13 +6,13 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/06 14:46:33 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/14 15:12:15 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/05/14 17:25:10 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include <stdio.h>
-#include "../libft.h"
+#include "libft.h"
 
 int		error(const char *msg, ...)
 {

@@ -6,11 +6,11 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/01 16:40:02 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/14 15:11:57 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/05/14 17:25:02 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 char	*ft_strncpy(char *dest, const char *src, size_t n)
 {

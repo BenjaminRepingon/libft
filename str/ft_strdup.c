@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/19 12:21:39 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/14 17:25:19 by rbenjami         ###   ########.fr       */
+/*   Created: 2014/05/14 17:17:01 by rbenjami          #+#    #+#             */
+/*   Updated: 2014/05/14 17:18:59 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isascii(int c)
+char	*ft_strdup(char *str)
 {
-	return ((c >= 0) && (c <= 127));
+	char	*res;
+	size_t	len;
+
+	len = ft_strlen(str);
+	res = ft_strnew(len);
+	ft_strncpy(res, str, len);
+	return (res);
 }

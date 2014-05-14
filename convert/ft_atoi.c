@@ -6,11 +6,11 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/12 18:30:15 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/14 15:12:13 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/05/14 17:25:07 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int			ft_atoi(const char *str)
 {

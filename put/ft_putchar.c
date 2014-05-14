@@ -6,11 +6,11 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/01 12:50:54 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/14 15:13:05 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/05/14 17:25:28 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 void	ft_putchar(char c)
 {

@@ -32,7 +32,7 @@ $(OBJ_LIB):		$(HEAD)
 
 %.o:		%.c
 	@echo -n .
-	@$(CC) $(CFLAGS) -c $< -o $@ $(INC)
+	@$(CC) $(CFLAGS) -I. -c $< -o $@ $(INC)
 
 clean:
 	@echo "\033[31m"Objects of libft.a : deleted"\033[0m"
@@ -40,7 +40,7 @@ clean:
 
 fclean:		clean
 	@echo "\033[31m"libft.a : deleted"\033[0m"
-	@/bin/rm -f $(NAME)
+	@/bin/rm -f ../$(NAME).a
 
 re:			fclean all
 

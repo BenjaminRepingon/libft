@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/04/28 16:27:32 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/14 15:12:12 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/05/14 17:19:16 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,9 @@ char		*ft_strncpy(char *dest, const char *src, size_t n);
 size_t		ft_strlen(char *str);
 int			ft_strcmp(char *str1, char *str2);
 void		ft_colorize(t_color color, int backgroud);
+char		*ft_strjoin_malloced(char *str1, char *str2);
+char		*ft_strjoin(char *str1, char *str2);
+char		*ft_strdup(char *str);
 
 /*
 **	IS

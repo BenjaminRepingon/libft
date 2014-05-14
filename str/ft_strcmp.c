@@ -6,11 +6,11 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/14 12:34:30 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/14 15:12:01 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/05/14 17:25:36 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int		ft_strcmp(char *str1, char *str2)
 {

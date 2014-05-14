@@ -6,11 +6,11 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/04/28 16:41:03 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/14 15:11:56 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/05/14 17:25:04 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 char	*ft_strstr(const char *str, const char *find)
 {

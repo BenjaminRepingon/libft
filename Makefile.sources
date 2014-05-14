@@ -22,7 +22,9 @@ SRC_LIB		=	put/ft_putstr.c			\
 				str/ft_strncpy.c		\
 				str/ft_strcmp.c			\
 				str/ft_strnew.c			\
+				str/ft_strjoin.c		\
 				str/ft_colorize.c		\
+				str/ft_strdup.c			\
 				\
 				error/exit_error.c		\
 				error/error.c			\

@@ -6,11 +6,11 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/11 12:32:07 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/14 15:12:27 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/05/14 17:25:23 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 int		ft_isspace(char c)
 {

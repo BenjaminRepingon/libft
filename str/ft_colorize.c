@@ -6,11 +6,11 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/13 13:51:09 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/14 15:12:02 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/05/14 17:25:33 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft.h"
 
 void	ft_colorize(t_color color, int backgroud)
 {
