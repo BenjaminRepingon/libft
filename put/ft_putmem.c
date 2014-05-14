@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_putmem.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/19 12:21:39 by rbenjami          #+#    #+#             */
-/*   Updated: 2013/11/19 13:55:32 by rbenjami         ###   ########.fr       */
+/*   Created: 2014/05/01 12:48:53 by rbenjami          #+#    #+#             */
+/*   Updated: 2014/05/14 15:13:28 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-int	ft_isalnum(int c)
+void	ft_putmem(void *adr)
 {
-	return (ft_isdigit(c) || ft_isalpha(c));
+	write(1, "0x", 2);
+	ft_putnbr_base((size_t)adr, 16);
+}
+
+void	ft_putmem_fd(void *adr, size_t fd)
+{
+	write(fd, "0x", 2);
+	ft_putnbr_base_fd((size_t)adr, 16, fd);
 }

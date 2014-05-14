@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/04/28 16:26:29 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/04/28 16:27:19 by rbenjami         ###   ########.fr       */
+/*   Created: 2013/11/19 12:21:39 by rbenjami          #+#    #+#             */
+/*   Updated: 2014/05/14 15:11:57 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strnew(size_t size)
 {
-	char	ch;
+	char	*str;
 
-	ch = (char)c;
-	while (*s != ch)
-	{
-		if (*s == '\0')
-			return (0);
-		s++;
-	}
-	return ((char *)s);
+	str = (char *)ft_memalloc(size + 1);
+	return (str);
 }

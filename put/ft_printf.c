@@ -6,13 +6,13 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/06 14:57:58 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/13 14:40:14 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/05/14 15:12:28 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include <stdio.h>
-#include "libft.h"
+#include "../libft.h"
 
 void	put_nbr(const char msg, va_list ap)
 {

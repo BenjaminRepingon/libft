@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 12:21:39 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/01/13 15:46:48 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/05/14 15:12:16 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-int		ft_isprint(int c)
+int	ft_isalnum(int c)
 {
-	return (c >= ' ' && c <= '~');
+	return (ft_isdigit(c) || ft_isalpha(c));
 }

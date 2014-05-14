@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/05/01 12:50:54 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/06 14:54:39 by rbenjami         ###   ########.fr       */
+/*   Created: 2014/05/14 12:34:30 by rbenjami          #+#    #+#             */
+/*   Updated: 2014/05/14 15:12:01 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-void	ft_putchar(char c)
+int		ft_strcmp(char *str1, char *str2)
 {
-	write(1, &c, 1);
-}
-
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
+	while (*str1 && *str1++ == *str2++)
+		;
+	return (*str2 - *str1);
 }

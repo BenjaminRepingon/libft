@@ -1,28 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/19 12:21:39 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/12 18:34:13 by rbenjami         ###   ########.fr       */
+/*   Created: 2014/04/28 16:56:56 by rbenjami          #+#    #+#             */
+/*   Updated: 2014/05/14 15:11:59 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-int				ft_islower(int c)
+size_t		ft_strlen(char *str)
 {
-	return ((c >= 'a') && (c <= 'z'));
-}
+	int		i;
 
-int				ft_isupper(int c)
-{
-	return ((c >= 'A') && (c <= 'Z'));
-}
-
-int				ft_isalpha(int c)
-{
-	return (ft_isupper(c) || ft_islower(c));
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

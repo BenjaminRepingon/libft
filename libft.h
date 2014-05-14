@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/04/28 16:27:32 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/13 14:38:52 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/05/14 15:12:12 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,6 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-/*
-**	COLOR
-*/
 typedef enum	e_color
 {
 	RESET = 0,
@@ -39,6 +36,9 @@ typedef enum	e_color
 	B_WHITE
 }				t_color;
 
+/*
+**	ANSI COLOR
+*/
 # define ANSI_COLOR_BLACK				"\x1b[30m"
 # define ANSI_COLOR_RED					"\x1b[31m"
 # define ANSI_COLOR_GREEN				"\x1b[32m"
@@ -68,16 +68,32 @@ typedef enum	e_color
 # define HEXADECIMAL 16
 # define SEXIGESIMAL 60
 
+/*
+**	PUT
+*/
+int			ft_printf(const char *msg, ...);
 void		ft_putstr(char *str);
 void		ft_putstr_fd(char *str, size_t fd);
 void		ft_putchar(char c);
-void		ft_putchar_fd(char c, int fd);
-size_t		ft_strlen(char *str);
+void		ft_putchar_fd(char c, size_t fd);
+void		ft_putmem(void *adr);
+void		ft_putmem_fd(void *adr, size_t fd);
+void		ft_putnbr_base(int n, size_t base);
+void		ft_putnbr_base_fd(int n, size_t base, size_t fd);
+
+/*
+**	STR
+*/
 char		*ft_strchr(const char *s, int c);
 char		*ft_strstr(const char *str, const char *find);
 char		*ft_strncpy(char *dest, const char *src, size_t n);
+size_t		ft_strlen(char *str);
+int			ft_strcmp(char *str1, char *str2);
 void		ft_colorize(t_color color, int backgroud);
 
+/*
+**	IS
+*/
 int			ft_isalnum(int c);
 int			ft_islower(int c);
 int			ft_isupper(int c);
@@ -87,18 +103,22 @@ int			ft_isdigit(int c);
 int			ft_isprint(int c);
 int			ft_isspace(char c);
 
+/*
+**	CONVERT
+*/
 char		*ft_itoa(int n);
 int			ft_atoi(const char *str);
+
+/*
+**	MEM
+*/
 void		*ft_memalloc(size_t size);
 char		*ft_strnew(size_t size);
 void		ft_bzero(void *s, size_t n);
 
-void		ft_putmem(void *adr);
-void		ft_putnbr_base(int n, size_t base);
-void		ft_putnbr_base_fd(int n, size_t base, int fd);
-int			argv_option(const char *argv[], char option);
-
-int			ft_printf(const char *msg, ...);
+/*
+**	ERROR
+*/
 int			error(const char *msg, ...);
 void		exit_error(char *error);
 

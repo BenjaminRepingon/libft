@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   exit_error.c                                       :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/05/01 15:04:23 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/03 16:15:25 by rbenjami         ###   ########.fr       */
+/*   Created: 2014/03/11 12:32:07 by rbenjami          #+#    #+#             */
+/*   Updated: 2014/05/14 15:12:27 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-void	exit_error(char *error)
+int		ft_isspace(char c)
 {
-	ft_putstr_fd(ANSI_COLOR_RED, 2);
-	ft_putstr_fd("error: ", 2);
-	ft_putstr_fd(ANSI_COLOR_RESET, 2);
-	write(2, error, ft_strlen(error));
-	write(2, "\n", 1);
-	exit(-42);
+	if (c == ' ' || c == '\n' || c == '\t')
+		return (1);
+	return (0);
 }

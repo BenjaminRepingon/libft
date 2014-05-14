@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/03/11 12:32:07 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/03/11 12:32:23 by rbenjami         ###   ########.fr       */
+/*   Created: 2013/11/19 11:01:32 by rbenjami          #+#    #+#             */
+/*   Updated: 2014/05/14 15:12:28 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+#include "../libft.h"
 
-int		ft_isspace(char c)
+void	*ft_memalloc(size_t size)
 {
-	if (c == ' ' || c == '\n' || c == '\t')
-		return (1);
+	void	*mem;
+
+	mem = malloc(size);
+	if (mem)
+	{
+		ft_bzero(mem, size);
+		return (mem);
+	}
 	return (0);
 }

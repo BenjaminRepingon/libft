@@ -1,27 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/19 11:01:32 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/09 15:50:10 by rbenjami         ###   ########.fr       */
+/*   Created: 2014/04/28 16:41:03 by rbenjami          #+#    #+#             */
+/*   Updated: 2014/05/14 15:11:56 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+#include "../libft.h"
 
-void	*ft_memalloc(size_t size)
+char	*ft_strstr(const char *str, const char *find)
 {
-	void	*mem;
+	char	*cp;
+	char	*s1;
+	char	*s2;
 
-	mem = malloc(size);
-	if (mem)
+	cp = (char *)str;
+	if (!*find)
+		return ((char *)str);
+	while (*cp)
 	{
-		ft_bzero(mem, size);
-		return (mem);
+		s1 = cp;
+		s2 = (char *)find;
+		while (*s1 && *s2 && !(*s1 - *s2))
+		{
+			s1++;
+			s2++;
+		}
+		if (!*s2)
+			return (cp);
+		cp++;
 	}
 	return (0);
 }

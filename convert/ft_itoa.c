@@ -6,11 +6,11 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/09 15:44:49 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/09 15:45:15 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/05/14 15:12:15 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 static char		*ft_saveitoa(int size, unsigned int n, char *nb, int neg)
 {

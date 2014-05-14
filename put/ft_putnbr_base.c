@@ -6,11 +6,11 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/01 12:47:08 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/06 15:18:22 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/05/14 15:12:03 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 void	ft_putnbr_base(int n, size_t base)
 {
@@ -33,7 +33,7 @@ void	ft_putnbr_base(int n, size_t base)
 	}
 }
 
-void	ft_putnbr_base_fd(int n, size_t base, int fd)
+void	ft_putnbr_base_fd(int n, size_t base, size_t fd)
 {
 	if (n < 0)
 	{

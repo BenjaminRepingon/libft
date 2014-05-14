@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/04/28 16:41:03 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/03 16:11:06 by rbenjami         ###   ########.fr       */
+/*   Created: 2014/04/28 16:58:28 by rbenjami          #+#    #+#             */
+/*   Updated: 2014/05/14 15:12:07 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-char	*ft_strstr(const char *str, const char *find)
+void	ft_putstr(char *str)
 {
-	char	*cp;
-	char	*s1;
-	char	*s2;
+	write(1, str, ft_strlen(str));
+}
 
-	cp = (char *)str;
-	if (!*find)
-		return ((char *)str);
-	while (*cp)
-	{
-		s1 = cp;
-		s2 = (char *)find;
-		while (*s1 && *s2 && !(*s1 - *s2))
-		{
-			s1++;
-			s2++;
-		}
-		if (!*s2)
-			return (cp);
-		cp++;
-	}
-	return (0);
+void	ft_putstr_fd(char *str, size_t fd)
+{
+	write(fd, str, ft_strlen(str));
 }

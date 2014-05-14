@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsousa <dsousa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/19 12:21:39 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/09 17:30:50 by dsousa           ###   ########.fr       */
+/*   Created: 2014/05/01 16:40:02 by rbenjami          #+#    #+#             */
+/*   Updated: 2014/05/14 15:11:57 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-char	*ft_strnew(size_t size)
+char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-	char	*str;
+	char	*s;
 
-	str = (char *)ft_memalloc(size + 1);
-	return (str);
+	s = dest;
+	while (n > 0 && *src != '\0')
+	{
+		*s++ = *src++;
+		--n;
+	}
+	while (n > 0)
+	{
+		*s++ = '\0';
+		--n;
+	}
+	return (dest);
 }

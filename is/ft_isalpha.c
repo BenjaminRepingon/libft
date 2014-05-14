@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   argv_option.c                                      :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/04/28 16:36:40 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/04/28 17:32:20 by rbenjami         ###   ########.fr       */
+/*   Created: 2013/11/19 12:21:39 by rbenjami          #+#    #+#             */
+/*   Updated: 2014/05/14 15:12:16 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
-int		argv_option(const char *argv[], char option)
+int				ft_islower(int c)
 {
-	int		i;
+	return ((c >= 'a') && (c <= 'z'));
+}
 
-	i = 1;
-	while (argv[i])
-	{
-		if (argv[i][0] != '-')
-			break ;
-		if (ft_strchr(argv[i], option) != 0)
-			return (1);
-		i++;
-	}
-	return (0);
+int				ft_isupper(int c)
+{
+	return ((c >= 'A') && (c <= 'Z'));
+}
+
+int				ft_isalpha(int c)
+{
+	return (ft_isupper(c) || ft_islower(c));
 }
