@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/14 12:34:30 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/14 17:25:36 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/05/16 15:16:37 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 int		ft_strcmp(char *str1, char *str2)
 {
-	while (*str1 && *str1++ == *str2++)
-		;
-	return (*str2 - *str1);
+	while (*str1 && *str1 == *str2)
+	{
+		str1++;
+		str2++;
+	}
+	return (*str1 - *str2);
 }
