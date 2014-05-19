@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/04/28 16:27:32 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/14 17:19:16 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/05/17 18:28:57 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,10 +89,18 @@ char		*ft_strstr(const char *str, const char *find);
 char		*ft_strncpy(char *dest, const char *src, size_t n);
 size_t		ft_strlen(char *str);
 int			ft_strcmp(char *str1, char *str2);
+int			ft_strncmp(char *s1, char *s2, size_t n);
 void		ft_colorize(t_color color, int backgroud);
 char		*ft_strjoin_malloced(char *str1, char *str2);
 char		*ft_strjoin(char *str1, char *str2);
 char		*ft_strdup(char *str);
+char		*ft_strsub(char const *s, size_t start, size_t len);
+char		**ft_strsplit(char const *s, char c);
+
+/*
+**	TAB
+*/
+size_t		ft_tabsize(void **tab);
 
 /*
 **	IS
@@ -124,5 +132,10 @@ void		ft_bzero(void *s, size_t n);
 */
 int			error(const char *msg, ...);
 void		exit_error(char *error);
+
+/*
+**	UTILS
+*/
+int			get_next_line(int fd, char **line);
 
 #endif

@@ -1,40 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/19 12:21:39 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/16 18:47:41 by rbenjami         ###   ########.fr       */
+/*   Created: 2014/05/17 11:25:17 by rbenjami          #+#    #+#             */
+/*   Updated: 2014/05/17 14:28:51 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_strcmp(char *s1, char *s2)
+char	*ft_strsub(char const *s, size_t start, size_t len)
 {
-	while ((*s1 == *s2) && (*s1 != '\0'))
-	{
-		s1++;
-		s2++;
-	}
-	if (*s1 != *s2)
-		return ((unsigned char)*s1 - (unsigned char)*s2);
-	return (0);
-}
+	size_t			i;
+	char			*str;
 
-int		ft_strncmp(char *s1, char *s2, size_t n)
-{
-	while ((*s1 == *s2) && (*s1 != '\0') && (n > 0))
-	{
-		s1++;
-		s2++;
-		n--;
-	}
-	if (n == 0)
+	i = 0;
+	str = ft_strnew(len);
+	if (!str || !s)
 		return (0);
-	if (*s1 != *s2)
-		return ((unsigned char)*s1 - (unsigned char)*s2);
-	return (0);
+	while (i++ < len)
+		str[i - 1] = s[start++];
+	return (str);
 }

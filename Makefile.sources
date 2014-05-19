@@ -25,6 +25,10 @@ SRC_LIB		=	put/ft_putstr.c			\
 				str/ft_strjoin.c		\
 				str/ft_colorize.c		\
 				str/ft_strdup.c			\
+				str/ft_strsplit.c		\
+				str/ft_strsub.c			\
+				\
+				tab/ft_tabsize.c		\
 				\
 				error/exit_error.c		\
 				error/error.c			\
@@ -39,4 +43,6 @@ SRC_LIB		=	put/ft_putstr.c			\
 				is/ft_isascii.c			\
 				is/ft_isdigit.c			\
 				is/ft_isprint.c			\
-				is/ft_isspace.c
+				is/ft_isspace.c			\
+				\
+				utils/get_next_line.c

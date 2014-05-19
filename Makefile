@@ -18,7 +18,7 @@ CFLAGS	=	-Wall -Wextra -Werror -g
 
 OBJ_LIB		=	$(SRC_LIB:.c=.o)
 
-HEAD		=	libft.h
+HEAD		=	libft.h get_next_line.h
 
 all:		$(NAME)
 
@@ -26,7 +26,7 @@ $(NAME):	$(OBJ_LIB)
 	@ar -rc ../$(NAME).a $(OBJ_LIB)
 	@ranlib ../$(NAME).a
 	@echo ""
-	@echo "\033[33m"Compilation of libft.a : "\033[32m"Succes"\033[0m"
+	@echo "\033[33m"Compilation of libft.a : "\033[32m"Success"\033[0m"
 
 $(OBJ_LIB):		$(HEAD)
 
