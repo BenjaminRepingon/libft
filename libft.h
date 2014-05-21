@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/04/28 16:27:32 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/19 12:54:01 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/05/21 14:57:41 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ typedef enum	e_color
 int			ft_printf(const char *msg, ...);
 void		ft_putstr(char *str);
 void		ft_putstr_fd(char *str, size_t fd);
+void		ft_putendl(char *str);
+void		ft_putendl_fd(char *str, size_t fd);
 void		ft_putchar(char c);
 void		ft_putchar_fd(char c, size_t fd);
 void		ft_putmem(void *adr);
