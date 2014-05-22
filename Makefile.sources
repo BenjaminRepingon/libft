@@ -14,7 +14,6 @@ SRC_LIB		=	put/ft_putstr.c			\
 				put/ft_putchar.c		\
 				put/ft_putmem.c			\
 				put/ft_putnbr_base.c	\
-				put/ft_printf.c			\
 				put/ft_putendl.c		\
 				\
 				str/ft_strlen.c			\
