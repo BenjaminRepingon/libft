@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/04/28 16:27:32 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/27 11:26:57 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/05/30 17:20:52 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ char		**ft_strsplit(char const *s, char c);
 */
 size_t		ft_tabsize(void **tab);
 void		ft_freetab(void **tab);
+char		**ft_cpytab(char **tab, int lenth);
 
 /*
 **	IS

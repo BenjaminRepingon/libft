@@ -30,6 +30,7 @@ SRC_LIB		=	put/ft_putstr.c			\
 				\
 				tab/ft_tabsize.c		\
 				tab/ft_freetab.c		\
+				tab/ft_cpytab.c			\
 				\
 				error/exit_error.c		\
 				error/error.c			\
