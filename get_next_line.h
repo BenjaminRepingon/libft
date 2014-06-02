@@ -27,4 +27,4 @@ typedef struct		s_read
 	struct s_read	*next;
 }					t_read;
 
-#endif /* !GET_NEXT_LINE_H */
+#endif
