@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/04/28 16:27:32 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/30 17:20:52 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/06/16 17:56:45 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ char		*ft_strjoin(char *str1, char *str2);
 char		*ft_strdup(char *str);
 char		*ft_strsub(char const *s, size_t start, size_t len);
 char		**ft_strsplit(char const *s, char c);
+char		*ft_trunc(const char *msg, ...);
 
 /*
 **	TAB

@@ -27,6 +27,7 @@ SRC_LIB		=	put/ft_putstr.c			\
 				str/ft_strdup.c			\
 				str/ft_strsplit.c		\
 				str/ft_strsub.c			\
+				str/ft_trunc.c			\
 				\
 				tab/ft_tabsize.c		\
 				tab/ft_freetab.c		\

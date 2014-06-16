@@ -19,9 +19,11 @@ void	*ft_memrealloc(void **ptr, size_t size, size_t new_size)
 	if (size == new_size)
 		return (*ptr);
 	mem = ft_memalloc(new_size);
+	if (ptr == NULL)
+		return (mem);
 	if (mem)
 	{
-		ft_memcpy(mem, *ptr, MIN(size, new_size));
+		ft_memcpy(mem, *ptr, size);
 		ft_memdel(ptr);
 	}
 	return (mem);
