@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/04/28 16:27:32 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/06/16 17:56:45 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/06/22 20:58:13 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ typedef enum	e_color
 	B_CYAN,
 	B_WHITE
 }				t_color;
+
+typedef struct	s_pattern
+{
+	char		*str;
+}				t_pattern;
 
 /*
 **	ANSI COLOR
@@ -104,6 +109,7 @@ char		*ft_strdup(char *str);
 char		*ft_strsub(char const *s, size_t start, size_t len);
 char		**ft_strsplit(char const *s, char c);
 char		*ft_trunc(const char *msg, ...);
+t_pattern	pattern(int repeat, const char *msg, ...);
 
 /*
 **	TAB
@@ -111,6 +117,7 @@ char		*ft_trunc(const char *msg, ...);
 size_t		ft_tabsize(void **tab);
 void		ft_freetab(void **tab);
 char		**ft_cpytab(char **tab, int lenth);
+int			**ft_cpytab_int(int **tab, int x, int y);
 
 /*
 **	IS
@@ -150,5 +157,9 @@ void		exit_error(char *error);
 **	UTILS
 */
 int			get_next_line(int fd, char **line);
+void		add_char(char **res, char c);
+void		add_str(char **res, char *str);
+void		add_int(char **res, int i);
+void		add_pattern(char **res, t_pattern pat);
 
 #endif

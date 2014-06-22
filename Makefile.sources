@@ -51,4 +51,6 @@ SRC_LIB		=	put/ft_putstr.c			\
 				is/ft_isprint.c			\
 				is/ft_isspace.c			\
 				\
-				utils/get_next_line.c
+				utils/get_next_line.c	\
+				utils/pattern.c			\
+				utils/add_trunc.c
