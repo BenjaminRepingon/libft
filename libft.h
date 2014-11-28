@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/04/28 16:27:32 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/11/28 11:52:14 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/11/28 12:18:04 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -213,24 +213,24 @@ typedef struct	s_matrix4f
 /*
 **	vector2f
 */
-t_vector2f		new_vector2f(float x, float y);
-float			length2(t_vector2f vec);
-float			dot2(t_vector2f vec1, t_vector2f vec2);
-float			cross2(t_vector2f vec1, t_vector2f vec2);
-t_vector2f		normalized2(t_vector2f vec);
-t_vector2f		inv2(t_vector2f vec);
-t_vector2f		add2v(t_vector2f vec1, t_vector2f vec2);
-t_vector2f		sub2v(t_vector2f vec1, t_vector2f vec2);
-t_vector2f		mul2v(t_vector2f vec1, t_vector2f vec2);
-t_vector2f		div2v(t_vector2f vec1, t_vector2f vec2);
-t_vector2f		add2f(t_vector2f vec1, float value);
-t_vector2f		sub2f(t_vector2f vec1, float value);
-t_vector2f		mul2f(t_vector2f vec1, float value);
-t_vector2f		div2f(t_vector2f vec1, float value);
-t_vector2f		pow2f(t_vector2f vec1, float value);
-t_vector2f		rt2(t_vector2f vec1);
-t_vector2f		rotate2(t_vector2f vec, float angle);
-float			get_value2(t_vector2f vec);
+t_vector2f		*new_vector2f(float x, float y);
+float			length2(t_vector2f *vec);
+float			dot2(t_vector2f *vec1, t_vector2f *vec2);
+float			cross2(t_vector2f *vec1, t_vector2f *vec2);
+t_vector2f		*normalized2(t_vector2f *vec);
+t_vector2f		*inv2(t_vector2f *vec);
+t_vector2f		*add2v(t_vector2f *vec1, t_vector2f *vec2);
+t_vector2f		*sub2v(t_vector2f *vec1, t_vector2f *vec2);
+t_vector2f		*mul2v(t_vector2f *vec1, t_vector2f *vec2);
+t_vector2f		*div2v(t_vector2f *vec1, t_vector2f *vec2);
+t_vector2f		*add2f(t_vector2f *vec1, float value);
+t_vector2f		*sub2f(t_vector2f *vec1, float value);
+t_vector2f		*mul2f(t_vector2f *vec1, float value);
+t_vector2f		*div2f(t_vector2f *vec1, float value);
+t_vector2f		*pow2f(t_vector2f *vec1, float value);
+t_vector2f		*rt2(t_vector2f *vec1);
+t_vector2f		*rotate2(t_vector2f *vec, float angle);
+float			get_value2(t_vector2f *vec);
 
 /*
 **	vector3f

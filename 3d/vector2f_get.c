@@ -6,13 +6,13 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/25 15:19:47 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/11/28 11:17:10 by rbenjami         ###   ########.fr       */
+/*   Updated: 2014/11/28 12:13:51 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-float		get_value2(t_vector2f vec)
+float		get_value2(t_vector2f *vec)
 {
-	return (vec.x + vec.y);
+	return (vec->x + vec->y);
 }
