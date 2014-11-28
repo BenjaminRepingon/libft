@@ -53,4 +53,30 @@ SRC_LIB		=	put/ft_putstr.c			\
 				\
 				utils/get_next_line.c	\
 				utils/pattern.c			\
-				utils/add_trunc.c
+				utils/add_trunc.c		\
+				\
+				list/list.c				\
+				\
+				3d/utils.c				\
+				3d/vector2f.c			\
+				3d/vector2f_add.c		\
+				3d/vector2f_sub.c		\
+				3d/vector2f_mul.c		\
+				3d/vector2f_div.c		\
+				3d/vector2f_pow.c		\
+				3d/vector2f_get.c		\
+				3d/vector2f_rotate.c	\
+				3d/vector3f.c			\
+				3d/vector3f_add.c		\
+				3d/vector3f_sub.c		\
+				3d/vector3f_mul.c		\
+				3d/vector3f_div.c		\
+				3d/vector3f_pow.c		\
+				3d/vector3f_get.c		\
+				3d/vector3f_rotate.c	\
+				3d/quaternion.c			\
+				3d/quaternion_mul.c		\
+				3d/quaternion_rot.c		\
+				3d/matrix4f.c			\
+				3d/matrix4f_rot.c		\
+				3d/transforms.c
