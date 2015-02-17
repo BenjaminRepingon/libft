@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/04/28 16:27:32 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/11/28 12:18:04 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/17 11:44:49 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ typedef struct		s_list
 	t_elem			*last;
 }					t_list;
 
+typedef char		t_bool;
+
 /*
 **	ANSI COLOR
 */
@@ -92,6 +94,11 @@ typedef struct		s_list
 */
 # define MIN(n, m)						((n) < (m) ? (n) : (m))
 # define EQUAL(n, m)					(!ft_strcmp(n, m))
+# define Vec2							t_vector2f
+# define Vec3							t_vector3f
+# define Mat4							t_matrix4f
+# define Quat							t_quaternion
+# define bool							t_bool
 
 /*
 **	PUT
@@ -136,14 +143,14 @@ int			**ft_cpytab_int(int **tab, int x, int y);
 /*
 **	IS
 */
-int			ft_isalnum(int c);
-int			ft_islower(int c);
-int			ft_isupper(int c);
-int			ft_isalpha(int c);
-int			ft_isascii(int c);
-int			ft_isdigit(int c);
-int			ft_isprint(int c);
-int			ft_isspace(char c);
+bool		ft_isalnum(int c);
+bool		ft_islower(int c);
+bool		ft_isupper(int c);
+bool		ft_isalpha(int c);
+bool		ft_isascii(int c);
+bool		ft_isdigit(int c);
+bool		ft_isprint(int c);
+bool		ft_isspace(char c);
 
 /*
 **	CONVERT
@@ -188,7 +195,7 @@ typedef struct	s_vector2f
 {
 	float		x;
 	float		y;
-}				t_vector2f;
+}				Vec2;
 
 typedef struct	s_vector3f
 {
@@ -213,75 +220,75 @@ typedef struct	s_matrix4f
 /*
 **	vector2f
 */
-t_vector2f		*new_vector2f(float x, float y);
-float			length2(t_vector2f *vec);
-float			dot2(t_vector2f *vec1, t_vector2f *vec2);
-float			cross2(t_vector2f *vec1, t_vector2f *vec2);
-t_vector2f		*normalized2(t_vector2f *vec);
-t_vector2f		*inv2(t_vector2f *vec);
-t_vector2f		*add2v(t_vector2f *vec1, t_vector2f *vec2);
-t_vector2f		*sub2v(t_vector2f *vec1, t_vector2f *vec2);
-t_vector2f		*mul2v(t_vector2f *vec1, t_vector2f *vec2);
-t_vector2f		*div2v(t_vector2f *vec1, t_vector2f *vec2);
-t_vector2f		*add2f(t_vector2f *vec1, float value);
-t_vector2f		*sub2f(t_vector2f *vec1, float value);
-t_vector2f		*mul2f(t_vector2f *vec1, float value);
-t_vector2f		*div2f(t_vector2f *vec1, float value);
-t_vector2f		*pow2f(t_vector2f *vec1, float value);
-t_vector2f		*rt2(t_vector2f *vec1);
-t_vector2f		*rotate2(t_vector2f *vec, float angle);
-float			get_value2(t_vector2f *vec);
+Vec2			*new_vector2f(float x, float y);
+float			length2(Vec2 *vec);
+float			dot2(Vec2 *vec1, Vec2 *vec2);
+float			cross2(Vec2 *vec1, Vec2 *vec2);
+Vec2			*normalized2(Vec2 *vec);
+Vec2			*inv2(Vec2 *vec);
+Vec2			*add2v(Vec2 *vec1, Vec2 *vec2);
+Vec2			*sub2v(Vec2 *vec1, Vec2 *vec2);
+Vec2			*mul2v(Vec2 *vec1, Vec2 *vec2);
+Vec2			*div2v(Vec2 *vec1, Vec2 *vec2);
+Vec2			*add2f(Vec2 *vec1, float value);
+Vec2			*sub2f(Vec2 *vec1, float value);
+Vec2			*mul2f(Vec2 *vec1, float value);
+Vec2			*div2f(Vec2 *vec1, float value);
+Vec2			*pow2f(Vec2 *vec1, float value);
+Vec2			*rt2(Vec2 *vec1);
+Vec2			*rotate2(Vec2 *vec, float angle);
+float			get_value2(Vec2 *vec);
 
 /*
 **	vector3f
 */
-t_vector3f		*new_vector3f(float x, float y, float z);
-float			length3(t_vector3f *vec);
-float			dot3(t_vector3f *vec1, t_vector3f *vec2);
-t_vector3f		*cross3(t_vector3f *vec1, t_vector3f *vec2);
-t_vector3f		*normalized3(t_vector3f *vec);
-t_vector3f		*inv3(t_vector3f *vec);
-t_vector3f		*add3v(t_vector3f *vec1, t_vector3f *vec2);
-t_vector3f		*sub3v(t_vector3f *vec1, t_vector3f *vec2);
-t_vector3f		*mul3v(t_vector3f *vec1, t_vector3f *vec2);
-t_vector3f		*div3v(t_vector3f *vec1, t_vector3f *vec2);
-t_vector3f		*add3f(t_vector3f *vec1, float value);
-t_vector3f		*sub3f(t_vector3f *vec1, float value);
-t_vector3f		*mul3f(t_vector3f *vec1, float value);
-t_vector3f		*div3f(t_vector3f *vec1, float value);
-t_vector3f		*pow3f(t_vector3f *vec1, float value);
-t_vector3f		*rt3(t_vector3f *vec1);
-t_vector3f		*rotate3(t_vector3f *vec, t_vector3f *axis, float angle);
-t_vector3f		*rotate3q(t_vector3f *vec, t_quaternion *rotation);
-float			get_value3(t_vector3f *vec);
+Vec3			*new_vector3f(float x, float y, float z);
+float			length3(Vec3 *vec);
+float			dot3(Vec3 *vec1, Vec3 *vec2);
+Vec3			*cross3(Vec3 *vec1, Vec3 *vec2);
+Vec3			*normalized3(Vec3 *vec);
+Vec3			*inv3(Vec3 *vec);
+Vec3			*add3v(Vec3 *vec1, Vec3 *vec2);
+Vec3			*sub3v(Vec3 *vec1, Vec3 *vec2);
+Vec3			*mul3v(Vec3 *vec1, Vec3 *vec2);
+Vec3			*div3v(Vec3 *vec1, Vec3 *vec2);
+Vec3			*add3f(Vec3 *vec1, float value);
+Vec3			*sub3f(Vec3 *vec1, float value);
+Vec3			*mul3f(Vec3 *vec1, float value);
+Vec3			*div3f(Vec3 *vec1, float value);
+Vec3			*pow3f(Vec3 *vec1, float value);
+Vec3			*rt3(Vec3 *vec1);
+Vec3			*rotate3(Vec3 *vec, Vec3 *axis, float angle);
+Vec3			*rotate3q(Vec3 *vec, Quat *rotation);
+float			get_value3(Vec3 *vec);
 
 /*
 **	matrix4f
 */
-t_matrix4f		*new_matrix4();
-t_matrix4f		*mul4m(t_matrix4f *m, t_matrix4f *r);
-t_matrix4f		*init_rotation3f(float x, float y, float z);
-t_matrix4f		*init_translation(t_vector3f *vec);
-t_matrix4f		*init_rotation3v(t_vector3f *f, t_vector3f *u, t_vector3f *r);
-t_matrix4f		*init_scale(float x, float y, float z);
+Mat4			*new_matrix4();
+Mat4			*mul4m(Mat4 *m, Mat4 *r);
+Mat4			*init_rotation3f(float x, float y, float z);
+Mat4			*init_translation(Vec3 *vec);
+Mat4			*init_rotation3v(Vec3 *f, Vec3 *u, Vec3 *r);
+Mat4			*init_scale(float x, float y, float z);
 
 /*
 **	quaternion
 */
-t_quaternion	*new_quaternion4f(float x, float y, float z, float w);
-t_quaternion	*new_quaternion4vf(t_vector3f *axis, float angle);
-float			length4(t_quaternion *q);
-t_quaternion	*normalized4(t_quaternion *q);
-t_quaternion	*conjugate4(t_quaternion *q);
-t_matrix4f		*to_rotation_matrix(t_quaternion *q);
-t_quaternion	*mul4q(t_quaternion *q, t_quaternion *r);
-t_quaternion	*mul4v(t_quaternion *q, t_vector3f *r);
+Quat			*new_quaternion4f(float x, float y, float z, float w);
+Quat			*new_quaternion4vf(Vec3 *axis, float angle);
+float			length4(Quat *q);
+Quat			*normalized4(Quat *q);
+Quat			*conjugate4(Quat *q);
+Mat4			*to_rotation_matrix(Quat *q);
+Quat			*mul4q(Quat *q, Quat *r);
+Quat			*mul4v(Quat *q, Vec3 *r);
 
 /*
 **	transforms
 */
-t_vector3f		*transform(t_vector3f *v, t_matrix4f *m);
-t_vector3f		*get_transforms(t_vector3f *v, t_vector3f *t, t_quaternion *r);
+Vec3			*transform(Vec3 *v, Mat4 *m);
+Vec3			*get_transforms(Vec3 *v, Vec3 *t, Quat *r);
 
 /*
 **	utils

@@ -6,13 +6,13 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/24 16:29:18 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/11/28 11:27:47 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/17 11:33:55 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_vector3f	*add3f(t_vector3f *vec1, float value)
+Vec3	*add3f(Vec3 *vec1, float value)
 {
 	vec1->x += value;
 	vec1->y += value;
@@ -20,7 +20,7 @@ t_vector3f	*add3f(t_vector3f *vec1, float value)
 	return (vec1);
 }
 
-t_vector3f	*add3v(t_vector3f *vec1, t_vector3f *vec2)
+Vec3	*add3v(Vec3 *vec1, Vec3 *vec2)
 {
 	vec1->x += vec2->x;
 	vec1->y += vec2->y;

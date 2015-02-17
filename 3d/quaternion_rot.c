@@ -6,19 +6,19 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/23 17:20:02 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/11/28 11:54:51 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/17 11:35:36 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_matrix4f		*to_rotation_matrix(t_quaternion *q)
+Mat4		*to_rotation_matrix(Quat *q)
 {
-	t_matrix4f	*mat;
-	t_vector3f	*forward;
-	t_vector3f	*up;
-	t_vector3f	*right;
-	float		xyz[3];
+	Mat4	*mat;
+	Vec3	*forward;
+	Vec3	*up;
+	Vec3	*right;
+	float	xyz[3];
 
 	xyz[0] = 2.0f * (q->x * q->z - q->w * q->y);
 	xyz[1] = 2.0f * (q->y * q->z + q->w * q->x);

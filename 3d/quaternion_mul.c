@@ -6,13 +6,13 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/17 16:47:31 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/11/28 11:54:23 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/17 11:33:42 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_quaternion	*mul4q(t_quaternion *q, t_quaternion *r)
+Quat	*mul4q(Quat *q, Quat *r)
 {
 	float	w_;
 	float	x_;
@@ -30,7 +30,7 @@ t_quaternion	*mul4q(t_quaternion *q, t_quaternion *r)
 	return (q);
 }
 
-t_quaternion	*mul4v(t_quaternion *q, t_vector3f *r)
+Quat	*mul4v(Quat *q, Vec3 *r)
 {
 	float	w_;
 	float	x_;

@@ -6,13 +6,13 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/23 18:05:39 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/11/28 11:59:43 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/17 11:33:44 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_vector3f		*transform(t_vector3f *v, t_matrix4f *m)
+Vec3		*transform(Vec3 *v, Mat4 *m)
 {
 	float	x;
 	float	y;
@@ -27,9 +27,9 @@ t_vector3f		*transform(t_vector3f *v, t_matrix4f *m)
 	return (v);
 }
 
-t_vector3f		*get_transforms(t_vector3f *v, t_vector3f *t, t_quaternion *r)
+Vec3		*get_transforms(Vec3 *v, Vec3 *t, Quat *r)
 {
-	t_matrix4f	*m;
+	Mat4	*m;
 
 	m = to_rotation_matrix(r);
 	m = mul4m(m, init_translation(t));

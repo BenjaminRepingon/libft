@@ -6,17 +6,17 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/24 15:19:24 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/11/28 11:51:19 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/17 11:35:08 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_matrix4f		*new_matrix4(void)
+Mat4		*new_matrix4(void)
 {
-	t_matrix4f	*res;
+	Mat4	*res;
 
-	if ( ( res = (t_matrix4f *)ft_memalloc( sizeof(t_matrix4f) ) ) == NULL )
+	if ((res = (Mat4 *)ft_memalloc(sizeof(Mat4))) == NULL)
 		return (NULL);
 	res->m[0][0] = 1;
 	res->m[0][1] = 0;
@@ -37,13 +37,13 @@ t_matrix4f		*new_matrix4(void)
 	return (res);
 }
 
-t_matrix4f		*mul4m(t_matrix4f *m, t_matrix4f *r)
+Mat4		*mul4m(Mat4 *m, Mat4 *r)
 {
-	t_matrix4f	*res;
+	Mat4		*res;
 	int			i;
 	int			j;
 
-	if ( ( res = (t_matrix4f *)ft_memalloc( sizeof(t_matrix4f) ) ) == NULL )
+	if ((res = (Mat4 *)ft_memalloc(sizeof(Mat4))) == NULL)
 		return (NULL);
 	i = 0;
 	while (i < 4)
@@ -62,11 +62,11 @@ t_matrix4f		*mul4m(t_matrix4f *m, t_matrix4f *r)
 	return (res);
 }
 
-t_matrix4f		*init_translation(t_vector3f *vec)
+Mat4		*init_translation(Vec3 *vec)
 {
-	t_matrix4f	*m;
+	Mat4	*m;
 
-	if ( ( m = (t_matrix4f *)ft_memalloc( sizeof(t_matrix4f) ) ) == NULL )
+	if ((m = (Mat4 *)ft_memalloc(sizeof(Mat4))) == NULL)
 		return (NULL);
 	m->m[0][0] = 1;
 	m->m[0][1] = 0;
@@ -87,11 +87,11 @@ t_matrix4f		*init_translation(t_vector3f *vec)
 	return (m);
 }
 
-t_matrix4f		*init_scale(float x, float y, float z)
+Mat4		*init_scale(float x, float y, float z)
 {
-	t_matrix4f	*m;
+	Mat4	*m;
 
-	if ( ( m = (t_matrix4f *)ft_memalloc( sizeof(t_matrix4f) ) ) == NULL )
+	if ((m = (Mat4 *)ft_memalloc(sizeof(Mat4))) == NULL)
 		return (NULL);
 	m->m[0][0] = x;
 	m->m[0][1] = 0;

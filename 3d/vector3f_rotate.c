@@ -6,13 +6,13 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/24 16:19:46 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/11/28 11:53:57 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/17 11:34:03 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_vector3f	*rotate3(t_vector3f *vec, t_vector3f *axis, float angle)
+Vec3	*rotate3(Vec3 *vec, Vec3 *axis, float angle)
 {
 	float		sin_angle;
 	float		cos_angle;
@@ -25,10 +25,10 @@ t_vector3f	*rotate3(t_vector3f *vec, t_vector3f *axis, float angle)
 	return (vec);
 }
 
-t_vector3f	*rotate3q(t_vector3f *vec, t_quaternion *rotation)
+Vec3	*rotate3q(Vec3 *vec, Quat *rotation)
 {
-	t_quaternion	*conjugate;
-	t_quaternion	*w;
+	Quat	*conjugate;
+	Quat	*w;
 
 	conjugate = conjugate4(rotation);
 	w = mul4q(mul4v(rotation, vec), conjugate);

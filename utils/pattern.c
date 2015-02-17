@@ -6,14 +6,14 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/06/22 20:56:13 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/06/22 21:01:33 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/17 11:21:42 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdarg.h>
 #include "libft.h"
 
-static char		*_trunc(const char *msg, va_list ap)
+static char		*trunc_2(const char *msg, va_list ap)
 {
 	char		*res;
 
@@ -51,7 +51,7 @@ t_pattern		pattern(int repeat, const char *msg, ...)
 
 	i = 0;
 	va_start(ap, msg);
-	pattern.str = _trunc(msg, ap);
+	pattern.str = trunc_2(msg, ap);
 	va_end(ap);
 	tmp = ft_strdup(pattern.str);
 	while (i < repeat - 1)

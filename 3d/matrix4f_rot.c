@@ -6,15 +6,15 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/23 17:22:59 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/11/28 11:58:08 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/17 11:45:23 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static t_matrix4f	init_rotation_x(float x)
+static Mat4		init_rotation_x(float x)
 {
-	t_matrix4f	rx;
+	Mat4	rx;
 
 	rx.m[0][0] = 1;
 	rx.m[0][1] = 0;
@@ -35,9 +35,9 @@ static t_matrix4f	init_rotation_x(float x)
 	return (rx);
 }
 
-static t_matrix4f	init_rotation_y(float y)
+static Mat4		init_rotation_y(float y)
 {
-	t_matrix4f	ry;
+	Mat4	ry;
 
 	ry.m[0][0] = (float)cos(y);
 	ry.m[0][1] = 0;
@@ -58,9 +58,9 @@ static t_matrix4f	init_rotation_y(float y)
 	return (ry);
 }
 
-static t_matrix4f	init_rotation_z(float z)
+static Mat4		init_rotation_z(float z)
 {
-	t_matrix4f	rz;
+	Mat4	rz;
 
 	rz.m[0][0] = (float)cos(z);
 	rz.m[0][1] = -(float)sin(z);
@@ -81,14 +81,14 @@ static t_matrix4f	init_rotation_z(float z)
 	return (rz);
 }
 
-t_matrix4f			*init_rotation3f(float x, float y, float z)
+Mat4			*init_rotation3f(float x, float y, float z)
 {
-	t_matrix4f	rx;
-	t_matrix4f	ry;
-	t_matrix4f	rz;
-	t_matrix4f	*res;
+	Mat4	rx;
+	Mat4	ry;
+	Mat4	rz;
+	Mat4	*res;
 
-	if ( ( res = (t_matrix4f *)ft_memalloc( sizeof(t_matrix4f) ) ) == NULL )
+	if ((res = (Mat4 *)ft_memalloc(sizeof(Mat4))) == NULL)
 		return (NULL);
 	x = to_radians(x);
 	y = to_radians(y);
@@ -100,11 +100,11 @@ t_matrix4f			*init_rotation3f(float x, float y, float z)
 	return (res);
 }
 
-t_matrix4f			*init_rotation3v(t_vector3f *f, t_vector3f *u, t_vector3f *r)
+Mat4			*init_rotation3v(Vec3 *f, Vec3 *u, Vec3 *r)
 {
-	t_matrix4f	*m;
+	Mat4	*m;
 
-	if ( ( m = (t_matrix4f *)ft_memalloc( sizeof(t_matrix4f) ) ) == NULL )
+	if ((m = (Mat4 *)ft_memalloc(sizeof(Mat4))) == NULL)
 		return (NULL);
 	m->m[0][0] = r->x;
 	m->m[0][1] = r->y;

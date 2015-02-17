@@ -6,13 +6,13 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/25 14:52:58 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/11/28 11:41:36 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/17 11:34:02 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_vector3f	*pow3f(t_vector3f *vec1, float value)
+Vec3	*pow3f(Vec3 *vec1, float value)
 {
 	vec1->x = pow(vec1->x, value);
 	vec1->y = pow(vec1->y, value);
@@ -20,7 +20,7 @@ t_vector3f	*pow3f(t_vector3f *vec1, float value)
 	return (vec1);
 }
 
-t_vector3f	*rt3(t_vector3f *vec1)
+Vec3	*rt3(Vec3 *vec1)
 {
 	return (mul3v(vec1, vec1));
 }

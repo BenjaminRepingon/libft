@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_cpytab.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsousa <dsousa@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/30 17:20:00 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/06/19 18:20:27 by dsousa           ###   ########.fr       */
+/*   Updated: 2015/02/17 11:20:43 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ char	**ft_cpytab(char **tab, int lenth)
 	}
 	return (new_tab);
 }
-
 
 int		**ft_cpytab_int(int **tab, int x, int y)
 {
