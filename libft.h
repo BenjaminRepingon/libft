@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/04/28 16:27:32 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/18 10:43:42 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/18 11:55:56 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,16 @@ typedef struct		s_list
 }					t_list;
 
 typedef char		t_bool;
+
+/*
+**	BOOL
+*/
+#ifndef TRUE
+# define TRUE							(1)
+#endif
+#ifndef FALSE
+# define FALSE							(0)
+#endif
 
 /*
 **	ANSI COLOR
@@ -119,9 +129,10 @@ void				ft_putnbr_base_fd(int n, size_t base, size_t fd);
 **	STR
 */
 char				*ft_strchr(const char *s, int c);
+char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *str, const char *find);
 char				*ft_strncpy(char *dest, const char *src, size_t n);
-size_t				ft_strlen(char *str);
+size_t				ft_strlen(char const *str);
 int					ft_strcmp(char *str1, char *str2);
 int					ft_strncmp(char *s1, char *s2, size_t n);
 void				ft_colorize(t_color color, int backgroud);
@@ -221,8 +232,8 @@ typedef struct		s_matrix4f
 
 typedef struct		s_vertex
 {
-	VEC3			pos;
-	VEC3			color;
+	VEC3			*pos;
+	VEC3			*color;
 }					t_vertex;
 
 /*
@@ -293,7 +304,7 @@ QUAT				*mul4q(QUAT *q, QUAT *r);
 QUAT				*mul4v(QUAT *q, VEC3 *r);
 
 /*
-**	VERTex
+**	vertex
 */
 VERT				*new_vertex3f(float x, float y, float z);
 VERT				*new_vertexp(VEC3 *pos);
