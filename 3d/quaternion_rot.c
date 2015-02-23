@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/23 17:20:02 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/18 10:37:57 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/19 14:44:33 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ MAT4		*to_rotation_matrix(QUAT *q)
 	mat = init_rotation3v(forward, up, right);
 	ft_memdel((void **)&forward);
 	ft_memdel((void **)&up);
-	ft_memdel((void **)&mat);
+	ft_memdel((void **)&right);
 	return (mat);
 }

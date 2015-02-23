@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/04/28 16:27:32 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/18 11:55:56 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/23 10:59:14 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,8 @@ typedef char		t_bool;
 /*
 **	BOOL
 */
-#ifndef TRUE
 # define TRUE							(1)
-#endif
-#ifndef FALSE
 # define FALSE							(0)
-#endif
 
 /*
 **	ANSI COLOR
@@ -104,11 +100,14 @@ typedef char		t_bool;
 */
 # define MIN(n, m)						((n) < (m) ? (n) : (m))
 # define EQUAL(n, m)					(!ft_strcmp(n, m))
+# define TO_RAD(n)						(n * M_PI / 180.0f)
+# define TO_DEG(n)						(n * 180.0f / M_PI)
 # define VEC2							t_vector2f
 # define VEC3							t_vector3f
 # define MAT4							t_matrix4f
 # define QUAT							t_quaternion
 # define VERT							t_vertex
+# define TRAN							t_transform
 # define BOOL							t_bool
 
 /*
@@ -232,9 +231,16 @@ typedef struct		s_matrix4f
 
 typedef struct		s_vertex
 {
-	VEC3			*pos;
-	VEC3			*color;
+	VEC3			pos;
+	VEC3			color;
 }					t_vertex;
+
+typedef struct		s_transform
+{
+	VEC3			pos;
+	VEC3			scale;
+	QUAT			rot;
+}					t_transform;
 
 /*
 **	vector2f
@@ -290,6 +296,7 @@ MAT4				*init_rotation3f(float x, float y, float z);
 MAT4				*init_translation(VEC3 *vec);
 MAT4				*init_rotation3v(VEC3 *f, VEC3 *u, VEC3 *r);
 MAT4				*init_scale(float x, float y, float z);
+MAT4				*init_perspective(float a, float b, float c, float d);
 
 /*
 **	quaternion
@@ -307,14 +314,15 @@ QUAT				*mul4v(QUAT *q, VEC3 *r);
 **	vertex
 */
 VERT				*new_vertex3f(float x, float y, float z);
-VERT				*new_vertexp(VEC3 *pos);
-VERT				*new_vertexpc(VEC3 *pos, VEC3 *color);
+VERT				*new_vertexp(VEC3 pos);
+VERT				*new_vertexpc(VEC3 pos, VEC3 color);
 
 /*
 **	transforms
 */
+TRAN				*new_transform(void);
 VEC3				*transform(VEC3 *v, MAT4 *m);
-VEC3				*get_transforms(VEC3 *v, VEC3 *t, QUAT *r);
+MAT4				*get_transforms(TRAN *t);
 
 /*
 **	utils

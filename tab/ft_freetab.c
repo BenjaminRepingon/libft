@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/27 11:26:39 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/27 11:26:50 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/02/20 15:15:53 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 
 void	ft_freetab(void **tab)
 {
-	int		i;
+	int	i;
 
-	i = ft_tabsize(tab);
+	i = -1;
 	if (tab)
 	{
-		while (i >= 0)
+		while (tab[++i])
 		{
-			free(*tab);
-			*tab = NULL;
-			tab++;
-			i--;
+			free(tab[i]);
+			tab[i] = NULL;
 		}
+		free(tab);
 		tab = NULL;
 	}
 }

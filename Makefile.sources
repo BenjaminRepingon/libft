@@ -80,5 +80,6 @@ SRC_LIB		=	put/ft_putstr.c			\
 				3d/quaternion_rot.c		\
 				3d/matrix4f.c			\
 				3d/matrix4f_rot.c		\
+				3d/matrix4f_init.c		\
 				3d/vertex.c				\
 				3d/transforms.c
