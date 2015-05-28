@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/04/28 16:27:32 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/23 10:59:14 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/05/26 16:58:43 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -168,6 +168,8 @@ BOOL				ft_isspace(char c);
 */
 char				*ft_itoa(int n);
 int					ft_atoi(const char *str);
+float				ft_atof(const char *str);
+
 
 /*
 **	MEM
@@ -297,6 +299,7 @@ MAT4				*init_translation(VEC3 *vec);
 MAT4				*init_rotation3v(VEC3 *f, VEC3 *u, VEC3 *r);
 MAT4				*init_scale(float x, float y, float z);
 MAT4				*init_perspective(float a, float b, float c, float d);
+void				update_fov_aspect(MAT4 *perspective, float fov, float a);
 
 /*
 **	quaternion

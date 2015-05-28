@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/30 17:20:00 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/17 11:20:43 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/05/22 10:32:43 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,8 @@ int		**ft_cpytab_int(int **tab, int x, int y)
 	int		**new_tab;
 	int		i;
 	int		j;
-	int		tablen;
 
 	i = 0;
-	tablen = ft_tabsize((void **)tab);
 	new_tab = (int **)ft_memalloc(sizeof(int *) * x);
 	while (i < x)
 	{

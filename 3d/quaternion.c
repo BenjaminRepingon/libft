@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/17 13:09:33 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/18 10:37:54 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/05/28 13:51:11 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ QUAT	*new_quaternion4vf(VEC3 *axis, float angle)
 
 	if ((q = (QUAT *)ft_memalloc(sizeof(QUAT))) == NULL)
 		return (NULL);
-	sin_half_angle = (float)sin(to_radians(angle) / 2);
-	cos_half_angle = (float)cos(to_radians(angle) / 2);
+	sin_half_angle = sinf(to_radians(angle) / 2);
+	cos_half_angle = cosf(to_radians(angle) / 2);
 	q->x = axis->x * sin_half_angle;
 	q->y = axis->y * sin_half_angle;
 	q->z = axis->z * sin_half_angle;

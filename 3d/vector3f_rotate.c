@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/24 16:19:46 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/18 10:38:06 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/05/28 10:46:44 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,20 @@ VEC3	*rotate3(VEC3 *vec, VEC3 *axis, float angle)
 
 VEC3	*rotate3q(VEC3 *vec, QUAT *rotation)
 {
-	QUAT	*conjugate;
-	QUAT	*w;
+	QUAT	conjugate;
+	QUAT	w;
 
-	conjugate = conjugate4(rotation);
-	w = mul4q(mul4v(rotation, vec), conjugate);
-	vec->x = w->x;
-	vec->y = w->y;
-	vec->z = w->z;
-	ft_memdel((void **)&conjugate);
-	ft_memdel((void **)&w);
+	w.x = rotation->x;
+	w.y = rotation->y;
+	w.z = rotation->z;
+	w.w = rotation->w;
+	conjugate.x = -rotation->x;
+	conjugate.y = -rotation->y;
+	conjugate.z = -rotation->z;
+	conjugate.w = rotation->w;
+	w = *mul4q(mul4v(&w, vec), &conjugate);
+	vec->x = w.x;
+	vec->y = w.y;
+	vec->z = w.z;
 	return (vec);
 }

@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/03/23 18:05:39 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/19 16:44:19 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/05/28 13:24:50 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ MAT4		*get_transforms(TRAN *t)
 	translation = init_translation(&t->pos);
 	rotation = to_rotation_matrix(&t->rot);
 	scale = init_scale(t->scale.x, t->scale.y, t->scale.z);
-	tmp = mul4m(rotation, scale);
+	tmp = mul4m(translation, rotation);
 	ft_memdel((void **)&rotation);
-	ft_memdel((void **)&scale);
-	tmp2 = mul4m(translation, tmp);
 	ft_memdel((void **)&translation);
+	tmp2 = mul4m(tmp, scale);
 	ft_memdel((void **)&tmp);
+	ft_memdel((void **)&scale);
 	return (tmp2);
 }

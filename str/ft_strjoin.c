@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/05/14 16:44:32 by rbenjami          #+#    #+#             */
-/*   Updated: 2014/05/14 17:32:27 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/05/26 11:53:46 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,13 @@ char		*ft_strjoin_malloced(char *str1, char *str2)
 char		*ft_strjoin(char *str1, char *str2)
 {
 	char	*res;
+	int		len1;
+	int		len2;
 
-	res = ft_strnew(ft_strlen(str1) + ft_strlen(str2));
-	ft_strncpy(res, str1, ft_strlen(str1));
-	ft_strncpy(res + ft_strlen(str1), str2, ft_strlen(str2));
+	len1 = (str1) ? ft_strlen(str1) : 0;
+	len2 = (str2) ? ft_strlen(str2) : 0;
+	res = ft_strnew(len1 + len2);
+	ft_strncpy(res, str1, len1);
+	ft_strncpy(res + len1, str2, len2);
 	return (res);
 }
