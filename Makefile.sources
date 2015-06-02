@@ -69,6 +69,7 @@ SRC_LIB		=	put/ft_putstr.c			\
 				3d/vector2f_get.c		\
 				3d/vector2f_rotate.c	\
 				3d/vector3f.c			\
+				3d/vector3f_2.c			\
 				3d/vector3f_add.c		\
 				3d/vector3f_sub.c		\
 				3d/vector3f_mul.c		\

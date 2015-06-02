@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/04/28 16:27:32 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/06/01 12:30:04 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/06/02 16:04:41 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,7 +170,6 @@ char				*ft_itoa(int n);
 int					ft_atoi(const char *str);
 float				ft_atof(const char *str);
 
-
 /*
 **	MEM
 */
@@ -289,6 +288,7 @@ VEC3				*rt3(VEC3 *vec1);
 VEC3				*rotate3(VEC3 *vec, VEC3 *axis, float angle);
 VEC3				*rotate3q(VEC3 *vec, QUAT *rotation);
 float				get_value3(VEC3 *vec);
+VEC3				vector3f(float x, float y, float z);
 
 /*
 **	matrix4f
