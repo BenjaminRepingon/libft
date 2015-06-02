@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/04/28 16:27:32 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/05/26 16:58:43 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/06/01 12:30:04 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,6 +192,7 @@ void				exit_error(char *error);
 */
 t_list				*new_list(void);
 t_elem				*add_elem(t_list *list, void *data);
+t_elem				*get_elem(t_list *list, size_t index);
 
 /*
 **	UTILS

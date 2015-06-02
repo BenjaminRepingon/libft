@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/28 11:07:42 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/17 11:23:01 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/06/01 12:46:50 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,20 @@ t_elem	*add_elem(t_list *list, void *data)
 	if (list->last != NULL)
 		list->last->next = elem;
 	list->last = elem;
+	return (elem);
+}
+
+t_elem	*get_elem(t_list *list, size_t index)
+{
+	size_t	i;
+	t_elem	*elem;
+
+	i = 0;
+	elem = list->first;
+	while (i < index)
+	{
+		i++;
+		elem = elem->next;
+	}
 	return (elem);
 }

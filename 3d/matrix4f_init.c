@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/19 13:48:39 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/05/28 13:20:09 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/06/01 13:49:19 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ MAT4	*init_perspective(float fov, float aspect, float z_near, float z_far)
 	res->m[2][0] = 0;
 	res->m[2][1] = 0;
 	res->m[2][2] = (-z_near - z_far) / z_range;
-	res->m[2][3] = -1;
+	res->m[2][3] = 1;
 	res->m[3][0] = 0;
 	res->m[3][1] = 0;
 	res->m[3][2] = 2.0f * z_far * z_near / z_range;
