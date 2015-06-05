@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/02/18 11:20:39 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/02/19 16:43:16 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/06/03 14:29:49 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		i;
+	int				i;
+	char			search;
 
-	i = ft_strlen(s) + 1;
-	while (i + 1)
+	search = (char)c;
+	i = ft_strlen(s) - 1;
+	if (search == '\0')
+		return (i + 1 + (char*)s);
+	while (i >= 0)
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		if (s[i] == search)
+			return (i + (char*)s);
 		i--;
 	}
-	return (0);
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: rbenjami <rbenjami@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/28 11:07:42 by rbenjami          #+#    #+#             */
-/*   Updated: 2015/06/01 12:46:50 by rbenjami         ###   ########.fr       */
+/*   Updated: 2015/06/04 14:18:54 by rbenjami         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,20 @@ t_elem	*get_elem(t_list *list, size_t index)
 		elem = elem->next;
 	}
 	return (elem);
+}
+
+void	del_list(t_list *list)
+{
+	t_elem	*elem;
+	t_elem	*tmp;
+
+	elem = list->first;
+	while (elem)
+	{
+		tmp = elem;
+		elem = elem->next;
+		ft_memdel(&tmp->data);
+		ft_memdel((void **)&tmp);
+	}
+	ft_memdel((void **)&list);
 }
